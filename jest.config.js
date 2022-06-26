@@ -72,21 +72,21 @@ module.exports = {
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
-    "web.js",
-    "js",
-    "web.ts",
-    "ts",
-    "web.tsx",
-    "tsx",
-    "json",
-    "web.jsx",
-    "jsx",
-    "node",
+    'web.js',
+    'js',
+    'web.ts',
+    'ts',
+    'web.tsx',
+    'tsx',
+    'json',
+    'web.jsx',
+    'jsx',
+    'node',
   ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "^.+\\.(css|sass|scss)$": "identity-obj-proxy",
+    '^.+\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -131,10 +131,10 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: ["react-app-polyfill/jsdom"],
+  setupFiles: ['react-app-polyfill/jsdom'],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -152,7 +152,7 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ["**/__tests__/**/?(*.)+(spec|test).[tj]s?(x)"],
+  testMatch: ['**/__tests__/**/?(*.)+(spec|test).[tj]s?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -176,10 +176,10 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$":
-      "<rootDir>/config/jest/transforms/babelTransform.ts",
-    "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)":
-      "<rootDir>/config/jest/transforms/fileTransform.ts",
+    '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$':
+      '<rootDir>/config/jest/transforms/babelTransform.ts',
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)':
+      '<rootDir>/config/jest/transforms/fileTransform.ts',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation

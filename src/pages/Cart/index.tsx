@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 import {
   MdAddCircleOutline,
   MdDelete,
   MdRemoveCircleOutline,
-} from "react-icons/md";
+} from 'react-icons/md';
 
 // import { useCart } from '../../hooks/useCart';
 // import { formatPrice } from '../../util/format';
-import { Container, ProductTable, Total } from "./styles";
+import { Container, ProductTable, Total } from './styles';
 
 interface Product {
   id: number;
@@ -47,19 +47,19 @@ const Cart = (): JSX.Element => {
       <ProductTable>
         <thead>
           <tr>
-            <th aria-label="product image" />
+            <th aria-label='product image' />
             <th>PRODUTO</th>
             <th>QTD</th>
             <th>SUBTOTAL</th>
-            <th aria-label="delete icon" />
+            <th aria-label='delete icon' />
           </tr>
         </thead>
         <tbody>
-          <tr data-testid="product">
+          <tr data-testid='product'>
             <td>
               <img
-                src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg"
-                alt="Tênis de Caminhada Leve Confortável"
+                src='https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg'
+                alt='Tênis de Caminhada Leve Confortável'
               />
             </td>
             <td>
@@ -69,22 +69,22 @@ const Cart = (): JSX.Element => {
             <td>
               <div>
                 <button
-                  type="button"
-                  data-testid="decrement-product"
+                  type='button'
+                  data-testid='decrement-product'
                   // disabled={product.amount <= 1}
                   // onClick={() => handleProductDecrement()}
                 >
                   <MdRemoveCircleOutline size={20} />
                 </button>
                 <input
-                  type="text"
-                  data-testid="product-amount"
+                  type='text'
+                  data-testid='product-amount'
                   readOnly
                   value={2}
                 />
                 <button
-                  type="button"
-                  data-testid="increment-product"
+                  type='button'
+                  data-testid='increment-product'
                   // onClick={() => handleProductIncrement()}
                 >
                   <MdAddCircleOutline size={20} />
@@ -96,8 +96,8 @@ const Cart = (): JSX.Element => {
             </td>
             <td>
               <button
-                type="button"
-                data-testid="remove-product"
+                type='button'
+                data-testid='remove-product'
                 // onClick={() => handleRemoveProduct(product.id)}
               >
                 <MdDelete size={20} />
@@ -108,7 +108,7 @@ const Cart = (): JSX.Element => {
       </ProductTable>
 
       <footer>
-        <button type="button">Finalizar pedido</button>
+        <button type='button'>Finalizar pedido</button>
 
         <Total>
           <span>TOTAL</span>
