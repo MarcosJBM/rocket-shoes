@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 
+import { Home } from './pages';
 import Cart from './pages/Cart';
-import Home from './pages/Home';
 
 const Routes = (): JSX.Element => {
   return (
