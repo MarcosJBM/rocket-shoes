@@ -2,7 +2,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import AxiosMock from 'axios-mock-adapter';
 
 import { useCart } from '../../hooks/useCart';
-import Home from '../../pages/Home';
+import { Home } from '../../pages';
 import { api } from '../../services/api';
 
 const apiMock = new AxiosMock(api);

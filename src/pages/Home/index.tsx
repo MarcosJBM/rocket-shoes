@@ -23,11 +23,13 @@ interface CartItemsAmount {
 
 export function Home() {
   const [products, setProducts] = useState<ProductFormatted[]>([]);
+
   const { addProduct, cart } = useCart();
 
-  const cartItemsAmount = cart.reduce((sumAmount, product) => {
-    sumAmount[product.id] = product.amount;
-    return sumAmount;
+  const cartItemsAmount = cart.reduce((cartItem, product) => {
+    cartItem[product.id] = product.amount;
+
+    return cartItem;
   }, {} as CartItemsAmount);
 
   useEffect(() => {
