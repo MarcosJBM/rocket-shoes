@@ -25,12 +25,13 @@ export function Cart() {
     subTotal: formatPrice(product.price * product.amount),
   }));
 
-  // const total =
-  //   formatPrice(
-  //     cart.reduce((sumTotal, product) => {
-  //       // TODO
-  //     }, 0)
-  //   )
+  const total = formatPrice(
+    cart.reduce((sumTotal, product) => {
+      sumTotal += product.price * product.amount;
+
+      return sumTotal;
+    }, 0)
+  );
 
   function handleProductIncrement(product: Product) {
     // TODO
@@ -121,7 +122,8 @@ export function Cart() {
 
         <Total>
           <span>TOTAL</span>
-          <strong>R$ 359,80</strong>
+
+          <strong>{total}</strong>
         </Total>
       </footer>
     </Container>
