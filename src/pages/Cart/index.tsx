@@ -34,7 +34,10 @@ export function Cart() {
   );
 
   function handleProductIncrement(product: Product) {
-    // TODO
+    updateProductAmount({
+      productId: product.id,
+      amount: product.amount + 1,
+    });
   }
 
   function handleProductDecrement(product: Product) {
@@ -92,7 +95,7 @@ export function Cart() {
                   <button
                     type='button'
                     data-testid='increment-product'
-                    // onClick={() => handleProductIncrement()}
+                    onClick={() => handleProductIncrement(product)}
                   >
                     <MdAddCircleOutline size={20} />
                   </button>

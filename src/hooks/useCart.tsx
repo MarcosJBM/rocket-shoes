@@ -67,9 +67,13 @@ export function CartProvider({ children }: CartProviderProps) {
     amount,
   }: UpdateProductAmount) {
     try {
-      // TODO
+      const products = cart.map(product =>
+        product.id === productId ? { ...product, amount } : product
+      );
+
+      setCart(products);
     } catch {
-      // TODO
+      toast.error('Não foi possível atualizar a quantidade do produto!');
     }
   }
 
