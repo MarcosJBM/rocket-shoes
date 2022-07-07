@@ -56,9 +56,11 @@ export function CartProvider({ children }: CartProviderProps) {
 
   async function removeProduct(productId: number) {
     try {
-      // TODO
+      const newProducts = cart.filter(product => product.id !== productId);
+
+      setCart(newProducts);
     } catch {
-      // TODO
+      toast.error('Não foi possível remover o produto!');
     }
   }
 
