@@ -41,7 +41,10 @@ export function Cart() {
   }
 
   function handleProductDecrement(product: Product) {
-    // TODO
+    updateProductAmount({
+      productId: product.id,
+      amount: product.amount - 1,
+    });
   }
 
   function handleRemoveProduct(productId: number) {
@@ -79,8 +82,8 @@ export function Cart() {
                   <button
                     type='button'
                     data-testid='decrement-product'
-                    // disabled={product.amount <= 1}
-                    // onClick={() => handleProductDecrement()}
+                    disabled={product.amount <= 1}
+                    onClick={() => handleProductDecrement(product)}
                   >
                     <MdRemoveCircleOutline size={20} />
                   </button>
