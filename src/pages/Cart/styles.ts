@@ -1,6 +1,24 @@
 import { darken, lighten } from 'polished';
 import styled from 'styled-components';
 
+export const NoItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 126px;
+    height: 126px;
+
+    margin-bottom: 24px;
+  }
+
+  span {
+    font-size: 24px;
+  }
+`;
+
 export const Container = styled.div`
   padding: 30px;
   background: #fff;
