@@ -26,6 +26,8 @@ export const Container = styled.div`
 
   background: #fff;
 
+  overflow-x: auto;
+
   footer {
     display: flex;
     justify-content: space-between;
@@ -49,6 +51,10 @@ export const Container = styled.div`
 
       &:hover {
         background: ${darken(0.06, '#7159c1')};
+      }
+
+      @media (max-width: 398px) {
+        padding: 8px;
       }
     }
   }
@@ -146,7 +152,7 @@ export const Total = styled.div`
   }
 
   strong {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
 
     margin-left: 5px;
   }
