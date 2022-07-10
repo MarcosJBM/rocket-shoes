@@ -15,29 +15,36 @@ export const NoItems = styled.div`
   }
 
   span {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 `;
 
 export const Container = styled.div`
   padding: 30px;
-  background: #fff;
+
   border-radius: 4px;
 
+  background: #fff;
+
   footer {
-    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    margin-top: 30px;
+
     button {
-      background: #7159c1;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      padding: 12px 20px;
       font-weight: bold;
       text-transform: uppercase;
+
+      padding: 12px 20px;
+
+      border: 0;
+      border-radius: 4px;
+
+      color: #fff;
+      background: #7159c1;
+
       transition: background 0.2s;
 
       &:hover {
@@ -51,13 +58,16 @@ export const ProductTable = styled.table`
   width: 100%;
 
   thead th {
-    color: #999;
     text-align: left;
+
     padding: 12px;
+
+    color: #999;
   }
 
   tbody td {
     padding: 12px;
+
     border-bottom: 1px solid #eee;
   }
 
@@ -66,15 +76,18 @@ export const ProductTable = styled.table`
   }
 
   strong {
-    color: #333;
     display: block;
+
+    color: #333;
   }
 
   span {
     display: block;
-    margin-top: 5px;
+
     font-size: 18px;
     font-weight: bold;
+
+    margin-top: 5px;
   }
 
   div {
@@ -82,21 +95,27 @@ export const ProductTable = styled.table`
     align-items: center;
 
     input {
+      width: 50px;
+
+      padding: 6px;
+
       border: 1px solid #ddd;
       border-radius: 4px;
+
       color: #666;
-      padding: 6px;
-      width: 50px;
     }
   }
 
   button {
-    background: none;
-    border: 0;
     padding: 6px;
+
+    border: 0;
+
+    background: none;
 
     svg {
       color: #7159c1;
+
       transition: color 0.2s;
     }
 
@@ -109,6 +128,7 @@ export const ProductTable = styled.table`
     &:disabled {
       svg {
         color: ${lighten(0.25, '#7159c1')};
+
         cursor: not-allowed;
       }
     }
@@ -120,12 +140,14 @@ export const Total = styled.div`
   align-items: baseline;
 
   span {
-    color: #999;
     font-weight: bold;
+
+    color: #999;
   }
 
   strong {
-    font-size: 28px;
+    font-size: 1.75rem;
+
     margin-left: 5px;
   }
 `;

@@ -12,13 +12,23 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    @media (max-width: 1080px) {
+      font-size: 93.75%;
+    }
+    
+    @media (max-width: 720px) {
+      font-size: 87.5%;
+    }
+  }
+
   body {
     background: #191920 url(${background}) no-repeat center top;
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, button {
-    font: 14px Roboto, sans-serif;
+    font: 0.875rem Roboto, sans-serif;
   }
 
   #root {
@@ -29,5 +39,9 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  ul {
+    list-style: none;
   }
 `;
