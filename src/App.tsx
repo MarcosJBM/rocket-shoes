@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import { Header } from './components';
-import { CartProvider } from './hooks/useCart';
+import { CartProvider } from './hooks';
 import { Routes } from './routes';
 import GlobalStyles from './styles/global';
 

@@ -5,7 +5,7 @@ import {
 } from 'react-icons/md';
 
 import emptyCart from '../../assets/images/empty-cart.svg';
-import { useCart } from '../../hooks/useCart';
+import { useCart } from '../../hooks';
 import { formatPrice } from '../../utils';
 import { Container, NoItems, ProductTable, Total } from './styles';
 

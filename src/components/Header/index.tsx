@@ -2,7 +2,7 @@ import { MdShoppingBasket } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/images/logo.svg';
-import { useCart } from '../../hooks/useCart';
+import { useCart } from '../../hooks';
 import { Cart, Container } from './styles';
 
 export function Header() {
