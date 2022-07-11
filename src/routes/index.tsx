@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 
-import { Cart, Home } from './pages';
+import { Cart, Home } from '../pages';
 
 export function Routes() {
   return (
