@@ -3,7 +3,7 @@ import AxiosMock from 'axios-mock-adapter';
 import { toast } from 'react-toastify';
 
 import { CartProvider, useCart } from '../../hooks';
-import { api } from '../../services/api';
+import { api } from '../../services';
 
 const apiMock = new AxiosMock(api);
 

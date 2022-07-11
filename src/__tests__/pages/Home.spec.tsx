@@ -3,7 +3,7 @@ import AxiosMock from 'axios-mock-adapter';
 
 import { useCart } from '../../hooks';
 import { Home } from '../../pages';
-import { api } from '../../services/api';
+import { api } from '../../services';
 
 const apiMock = new AxiosMock(api);
 const mockedAddProduct = jest.fn();

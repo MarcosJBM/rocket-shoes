@@ -6,16 +6,9 @@ import {
 
 import emptyCart from '../../assets/images/empty-cart.svg';
 import { useCart } from '../../hooks';
+import { ProductProps } from '../../types';
 import { formatPrice } from '../../utils';
 import { Container, NoItems, ProductTable, Total } from './styles';
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-  amount: number;
-}
 
 export function Cart() {
   const { cart, removeProduct, updateProductAmount } = useCart();
@@ -34,14 +27,14 @@ export function Cart() {
     }, 0)
   );
 
-  function handleProductIncrement(product: Product) {
+  function handleProductIncrement(product: ProductProps) {
     updateProductAmount({
       productId: product.id,
       amount: product.amount + 1,
     });
   }
 
-  function handleProductDecrement(product: Product) {
+  function handleProductDecrement(product: ProductProps) {
     updateProductAmount({
       productId: product.id,
       amount: product.amount - 1,

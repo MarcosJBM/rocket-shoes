@@ -1,29 +1,21 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 
-import { api } from '../services/api';
-import { Product, Stock } from '../types';
+import { api } from '../services';
+import {
+  CartContextDataProps,
+  CartProviderProps,
+  ProductProps,
+  StockProps,
+  UpdateProductAmountProps,
+} from '../types';
 
-interface CartProviderProps {
-  children: ReactNode;
-}
-
-interface UpdateProductAmount {
-  productId: number;
-  amount: number;
-}
-
-interface CartContextData {
-  cart: Product[];
-  addProduct: (productId: number) => Promise<void>;
-  removeProduct: (productId: number) => void;
-  updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void;
-}
-
-const CartContext = createContext<CartContextData>({} as CartContextData);
+const CartContext = createContext<CartContextDataProps>(
+  {} as CartContextDataProps
+);
 
 export function CartProvider({ children }: CartProviderProps) {
-  const [cart, setCart] = useState<Product[]>(() => {
+  const [cart, setCart] = useState<ProductProps[]>(() => {
     const storagedCart = localStorage.getItem('@RocketShoes:cart');
 
     if (storagedCart) return JSON.parse(storagedCart);
@@ -33,9 +25,11 @@ export function CartProvider({ children }: CartProviderProps) {
 
   async function addProduct(productId: number): Promise<void> {
     try {
-      const selectedProduct = await api.get<Product>(`products/${productId}`);
+      const selectedProduct = await api.get<ProductProps>(
+        `products/${productId}`
+      );
 
-      const productStock = await api.get<Stock>(`stock/${productId}`);
+      const productStock = await api.get<StockProps>(`stock/${productId}`);
 
       const product = cart.find(product => product.id === productId);
 
@@ -93,11 +87,11 @@ export function CartProvider({ children }: CartProviderProps) {
   async function updateProductAmount({
     productId,
     amount,
-  }: UpdateProductAmount) {
+  }: UpdateProductAmountProps) {
     try {
       if (amount <= 0) return;
 
-      const productStock = await api.get<Stock>(`stock/${productId}`);
+      const productStock = await api.get<StockProps>(`stock/${productId}`);
 
       if (amount > productStock.data.amount) {
         toast.error('Quantidade solicitada fora de estoque');
@@ -126,7 +120,7 @@ export function CartProvider({ children }: CartProviderProps) {
   );
 }
 
-export function useCart(): CartContextData {
+export function useCart(): CartContextDataProps {
   const context = useContext(CartContext);
 
   return context;

@@ -2,27 +2,17 @@ import { useEffect, useState } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
 
 import { useCart } from '../../hooks';
-import { api } from '../../services/api';
+import { api } from '../../services';
+import {
+  CartItemsAmountProps,
+  ProductFormattedProps,
+  ProductInHomeProps,
+} from '../../types';
 import { formatPrice } from '../../utils';
 import { ProductList } from './styles';
 
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-}
-
-interface ProductFormatted extends Product {
-  priceFormatted: string;
-}
-
-interface CartItemsAmount {
-  [key: number]: number;
-}
-
 export function Home() {
-  const [products, setProducts] = useState<ProductFormatted[]>([]);
+  const [products, setProducts] = useState<ProductFormattedProps[]>([]);
 
   const { addProduct, cart } = useCart();
 
@@ -30,12 +20,12 @@ export function Home() {
     cartItem[product.id] = product.amount;
 
     return cartItem;
-  }, {} as CartItemsAmount);
+  }, {} as CartItemsAmountProps);
 
   useEffect(() => {
     async function loadProducts() {
       try {
-        const { data } = await api.get<Product[]>('/products');
+        const { data } = await api.get<ProductInHomeProps[]>('/products');
 
         setProducts(oldState => [
           ...oldState,

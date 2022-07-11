@@ -16,6 +16,9 @@ export const NoItems = styled.div`
 
   span {
     font-size: 1.5rem;
+    line-height: 20px;
+    font-weight: bold;
+    color: #333;
   }
 `;
 
