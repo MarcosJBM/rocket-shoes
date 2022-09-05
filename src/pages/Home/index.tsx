@@ -22,29 +22,29 @@ export function Home() {
     return cartItem;
   }, {} as CartItemsAmountProps);
 
-  useEffect(() => {
-    async function loadProducts() {
-      try {
-        const { data } = await api.get<ProductInHomeProps[]>('/products');
-
-        setProducts(oldState => [
-          ...oldState,
-          ...data.map(product => ({
-            ...product,
-            priceFormatted: formatPrice(product.price),
-          })),
-        ]);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    loadProducts();
-  }, []);
-
   function handleAddProduct(id: number) {
     addProduct(id);
   }
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const { data } = await api.get('/products');
+
+        const formattedData = data.map((product: any) => ({
+          ...product,
+          id: Number(product.id),
+          priceFormatted: formatPrice(product.price),
+        }));
+
+        setProducts(oldState => [...oldState, ...formattedData]);
+      } catch (error) {
+        return;
+      }
+    }
+
+    fetchProducts();
+  }, []);
 
   return (
     <ProductList>
