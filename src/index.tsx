@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import { App } from './App';
 import { ProductInHomeProps, StockProps } from './types';
 
+const URL_PREFIX = process.env.REACT_APP_API_URL || 'http://localhost:3333';
+
 createServer({
   environment: 'development',
 
@@ -21,6 +23,7 @@ createServer({
       image:
         'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg',
     });
+
     server.create('product', {
       id: '2',
       title: 'Tênis VR Caminhada Confortável Detalhes Couro Masculino',
@@ -28,6 +31,7 @@ createServer({
       image:
         'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg',
     });
+
     server.create('product', {
       id: '3',
       title: 'Tênis Adidas Duramo Lite 2.0',
@@ -35,6 +39,7 @@ createServer({
       image:
         'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg',
     });
+
     server.create('product', {
       id: '4',
       title: 'Tênis de Caminhada Leve Confortável',
@@ -42,6 +47,7 @@ createServer({
       image:
         'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg',
     });
+
     server.create('product', {
       id: '5',
       title: 'Tênis VR Caminhada Confortável Detalhes Couro Masculino',
@@ -49,6 +55,7 @@ createServer({
       image:
         'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg',
     });
+
     server.create('product', {
       id: '6',
       title: 'Tênis Adidas Duramo Lite 2.0',
@@ -61,22 +68,27 @@ createServer({
       id: '1',
       amount: 3,
     });
+
     server.create('stock', {
       id: '2',
       amount: 5,
     });
+
     server.create('stock', {
       id: '3',
       amount: 2,
     });
+
     server.create('stock', {
       id: '4',
       amount: 3,
     });
+
     server.create('stock', {
       id: '5',
       amount: 5,
     });
+
     server.create('stock', {
       id: '6',
       amount: 10,
@@ -84,9 +96,9 @@ createServer({
   },
 
   routes() {
-    this.namespace = 'api';
+    this.urlPrefix = URL_PREFIX;
 
-    this.urlPrefix = 'http://localhost:3333';
+    this.namespace = '/api';
 
     this.get('/stock', () => {
       const stocks = this.schema
