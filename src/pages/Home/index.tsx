@@ -29,11 +29,10 @@ export function Home() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const { data } = await api.get('/products');
+        const { data } = await api.get<ProductInHomeProps[]>('/products');
 
-        const formattedData = data.map((product: any) => ({
+        const formattedData = data.map(product => ({
           ...product,
-          id: Number(product.id),
           priceFormatted: formatPrice(product.price),
         }));
 
