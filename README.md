@@ -1,79 +1,19 @@
-<div align='center'>
-  <img src='.github/logo.svg' alt='Logo do projeto'/>
-</div>
-
-<div align='center'>
-  <a href='#about'>📖 Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href='#technologies'>🔩 Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href='#running-the-project'>🤔 Como Executar</a>
-</div>
-
-</br>
-
 <div align="center">
-  <img src=".github/rocket-shoes-home.png" alt="Capa do projeto Feedback Widget" width="780px" />
+  <img src=".github/cover.png" alt="Project cover" width="720" />
 </div>
 
-<a id='about'></a>
+# 📖 About
 
-# 📖 Sobre o Projeto
+**RocketShoes** is a web application, created to be a simple example of an e-commerce.
 
-O **RocketShoes** é uma aplicação web, criada para ser um simples exemplo de um e-commerce.
+This project is part of a series of mandatory challenges to be completed on [Rocketseat's](https://www.rocketseat.com.br/) Ignite course, React trail.
 
-Está aplicação faz parte de uma serie de desafios a serem concluidos no curso Ignite - Trilha ReactJS da @Rocketseat.
+The application developed in the course does not use MirageJS, but JSON Server, however, as I would like to host the application on Vercel, so that everyone could see the application in operation, I carried out this migration, the application continues to work the same the way it was originally developed during the course.
 
-A aplicação desenvolvida no curso não utiliza o MirageJS, e sim o JSON Server, porém, como eu gostaria de hospedar a aplicação na Vercel, para que todo mundo pudesse visualizar a aplicação em funcionamento, eu fiz essa migração, a aplicação continua funcionando do mesmo jeito que foi desenvolvida originalmente durante o curso.
+# 🔩 Technologies
 
-<a id='technologies'></a>
-
-# 🔩 Tecnologias
-
-Estas foram as **principais** tecnologias utilizadas.
-
-- [ReactJS](https://pt-br.reactjs.org/)
+- [React](https://react.dev/)
 - [Create React App](https://create-react-app.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Axios](https://axios-http.com/)
-- [Mirage](https://miragejs.com/)
-
-<a id='running-the-project'></a>
-
-# 🤔 Como executar
-
-## **Pré-requisitos**
-
-- É **necessário** possuir o **[NodeJS](https://nodejs.org/en/)** em sua máquina.
-- É **necessário** possuir o **[Git](https://git-scm.com/)** instalado e configurado em sua máquina.
-- É **necessário** possuir um gerenciador de pacotes, **[Yarn](https://yarnpkg.com/)** ou **[NPM](https://www.npmjs.com/)**.
-
-## Passo 1: Clonando o Projeto na sua máquina:
-
-Abra seu terminal e execute:
-
-```sh
-  git clone https://github.com/MarcosJBM/rocket-shoes.git
-```
-
-O comando acima irá clonar o repositório na sua máquina.
-
-## Passo 2: Instalando dependências:
-
-Ainda no terminal, navegue até a pasta do projeto e execute:
-
-```sh
-  yarn install
-```
-
-O comando acima irá instalar as dependências necessárias para executar a aplicação.
-
-## Passo 3: Configurando as variáveis de ambiente:
-
-Crie no root do projeto um arquivo chamado **_.env.development_** e crie as variáveis de ambiente de acordo com os exemplos no arquivo **_.env.example_**.
-
-## Passo 4: Executando a aplicação:
-
-```sh
-  yarn start
-```
-
-Após executar o comando acima, a aplicação irá ser inicializada.
+- [MirageJS](https://miragejs.com/)
